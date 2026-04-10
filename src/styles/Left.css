@@ -1,0 +1,51 @@
+.nav-left {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.menu-btn:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.menu-btn svg,
+.menu-btn img {
+  width: 24px;
+  height: 24px;
+  fill: #5f6368;
+}
+
+.keep-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.keep-text {
+  font-size: 22px;
+  color: #5f6368;
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .keep-text {
+    display: none;
+  }
+
+  .keep-logo {
+    margin-right: 0;
+  }
+}

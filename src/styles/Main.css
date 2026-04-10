@@ -1,0 +1,335 @@
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.note-input-container,
+.note-expanded-container {
+    width: 600px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    margin-bottom: 32px;
+    background-color: #fff;
+}
+
+.note-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    padding: 0 16px;
+    cursor: text;
+}
+
+.note-expanded-container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+}
+
+.note-title-input {
+    font-family: Arial, sans-serif;
+    color: #202124;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-bottom: 12px;
+}
+
+.note-title-input::placeholder {
+    color: #5f6368;
+}
+
+.note-textarea {
+    font-family: Arial, sans-serif;
+    color: #202124;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+    background: transparent;
+    resize: none;
+    min-height: 24px;
+    margin-bottom: 12px;
+}
+
+.note-textarea::placeholder {
+    color: #5f6368;
+}
+
+.note-input-text {
+    font-family: Arial, sans-serif;
+    color: #3c4043;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    flex: 1;
+    background: transparent;
+}
+
+.note-input-text::placeholder {
+    color: #5f6368;
+}
+
+.note-input-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.note-icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-icon-btn:hover {
+    background-color: rgba(60, 64, 67, 0.08);
+}
+
+.note-icon-btn.active {
+    background-color: #e8f0fe;
+}
+
+.note-icon-btn svg,
+.note-icon-btn img {
+    width: 20px;
+    height: 20px;
+    fill: #5f6368;
+}
+
+.note-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border-radius: 4px;
+    color: #3c4043;
+}
+
+.close-btn:hover {
+    background-color: rgba(60, 64, 67, 0.04);
+}
+
+.notes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    max-width: 800px;
+    align-items: flex-start;
+}
+
+.note-card {
+    width: 240px;
+    min-height: 110px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px 16px 24px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #202124;
+    word-wrap: break-word;
+    position: relative;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.note-card.dragging {
+    opacity: 0.55;
+}
+
+.note-card:hover {
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.note-card-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.note-card.yellow {
+    background-color: #fbf0b1;
+    border-color: transparent;
+}
+
+.note-reminder-chip {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 14px;
+    background: #f1f3f4;
+    color: #3c4043;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.note-reminder-chip img {
+    width: 16px;
+    height: 16px;
+}
+
+.note-reminder-chip.due {
+    background: #fce8e6;
+    color: #b3261e;
+}
+
+.note-card-actions {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 6px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note-card:hover .note-card-actions {
+    display: flex;
+}
+
+.delete-btn-overlay {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn-overlay:hover {
+    background-color: rgba(60, 64, 67, 0.08);
+}
+
+.note-card:hover .delete-btn-overlay {
+    display: flex;
+}
+
+.delete-btn-overlay svg,
+.delete-btn-overlay img {
+    width: 18px;
+    height: 18px;
+    fill: #5f6368;
+}
+
+.reminder-live-region {
+    position: absolute;
+    left: -9999px;
+}
+
+/* Color Picker Popover */
+.color-picker-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.color-picker-popover {
+    position: absolute;
+    bottom: 35px;
+    left: -20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    z-index: 100;
+    width: max-content;
+}
+
+.color-swatch-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    outline: none;
+}
+
+.color-swatch-btn:hover {
+    border-color: #202124;
+}
+
+.color-swatch-default {
+    border-color: #e0e0e0;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.color-swatch-default::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e0e0e0;
+    transform: rotate(-45deg);
+}
+
+.color-swatch-default:hover {
+    border-color: #202124;
+}
+
+.color-swatch-default:hover::after {
+    background-color: #202124;
+}
+
+/* Responsive Overrides */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 16px 8px;
+    }
+
+    .note-card {
+        width: 100%;
+    }
+
+    .note-input-container,
+    .note-expanded-container {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .note-toolbar {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}

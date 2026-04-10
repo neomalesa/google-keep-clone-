@@ -1,0 +1,66 @@
+.nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: rgba(60, 64, 67, 0.08);
+}
+
+.icon-btn svg,
+.icon-btn img {
+    width: 24px;
+    height: 24px;
+    fill: #5f6368;
+}
+
+.icon-btn img {
+    opacity: 0.65;
+}
+
+.profile-btn {
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+
+    .icon-btn[aria-label="Refresh"],
+    .icon-btn[aria-label="List view"],
+    .icon-btn[aria-label="Settings"] {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 4px;
+        padding-right: 8px;
+    }
+}

@@ -1,0 +1,70 @@
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f4;
+  border-radius: 8px;
+  height: 48px;
+  width: 100%;
+  max-width: 722px;
+  padding: 0 8px;
+  margin: 0 20px;
+  /* Gives some breathing room between the left/right nav sections */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Google Keep search bar turns white with a shadow when focused */
+.search-bar-container:focus-within {
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px 0 rgba(65, 69, 73, 0.3), 0 1px 3px 1px rgba(65, 69, 73, 0.15);
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.search-icon,
+img.search-icon {
+  width: 24px;
+  height: 24px;
+  fill: #5f6368;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  color: #3c4043;
+  font-family: Arial, sans-serif;
+  padding: 0 8px;
+}
+
+.search-input::placeholder {
+  color: #5f6368;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .search-bar-container {
+    margin: 0 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .search-input::placeholder {
+    color: transparent;
+  }
+}
